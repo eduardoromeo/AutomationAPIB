@@ -34,11 +34,7 @@ public class MyStepdefs {
         RequestInformation request = new RequestInformation();
         request.setUrl(HOST + this.replaceVariables(url));
         request.setBody(this.replaceVariables(jsonBody));
-      /*  if (authentication.equals("TOKEN")) {
-            request.addHeaders(TOKEN_AUTHENTICATION_HEADER, this.replaceVariables(authentication));
-        } else {
-            request.addHeaders(BASIC_AUTHENTICATION_HEADER, BASIC_AUTHENTICATION);
-        }*/
+
         response = FactoryRequest.make(method.toLowerCase()).send(request);
     }
 
@@ -58,7 +54,7 @@ public class MyStepdefs {
     @And("^I expected the response body is equal$")
     public void iExpectedTheResponseBodyIsEqual(String expectResponseBody) throws JSONException {
         System.out.println("Response Body "+this.replaceVariables(response.getResponseBody()));
-        //Assert.assertTrue("ERROR el response body es incorrecto", JsonHelper.areEqualJSON(this.replaceVariables(expectResponseBody), response.getResponseBody()));
+
     }
 
     @And("^I get the property value '(.*)' and save on (.*)$")

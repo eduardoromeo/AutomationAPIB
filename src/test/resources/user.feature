@@ -1,6 +1,6 @@
 Feature: Users
 
-  Scenario: I want to create a new user
+  Scenario: I want to get email
 
     Given I have authentication to todo.ly
     When I send GET request 'api/user.json' with json and BASIC authentication
